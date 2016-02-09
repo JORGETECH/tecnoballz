@@ -318,7 +318,7 @@ const char * handler_resources::folderlist[] =
   DATADIR,
   "/",
   /* normally unused, except when running from the source directory */
-  "./TecnoballZ/",
+  "./data/",
   /* also marks end of list */
   0
 };
