@@ -4,7 +4,7 @@ gamesdir = $(prefix)/games
 scoredir = /var/games/tecnoballz
 score = tecnoballz.hi
 
-SUBDIRS = TecnoballZ
+SUBDIRS = data
 
 games_PROGRAMS = tecnoballz
 tecnoballz_SOURCES = $(SOURCES_MAIN) 

@@ -64,13 +64,13 @@ fi
 AC_OUTPUT(
   Makefile
   src/Makefile
-  src/TecnoballZ/Makefile
-  src/TecnoballZ/hires/Makefile
-  src/TecnoballZ/lores/Makefile
-  src/TecnoballZ/textures/Makefile
-  src/TecnoballZ/musics/Makefile
-  src/TecnoballZ/sounds/Makefile
-  src/TecnoballZ/texts/Makefile)
+  src/data/Makefile
+  src/data/hires/Makefile
+  src/data/lores/Makefile
+  src/data/textures/Makefile
+  src/data/musics/Makefile
+  src/data/sounds/Makefile
+  src/data/texts/Makefile)
 
 echo "
 

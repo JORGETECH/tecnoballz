@@ -1,5 +1,5 @@
 
-SUBDIRS = src src/TecnoballZ src/TecnoballZ/textures src/TecnoballZ/hires src/TecnoballZ/musics src/TecnoballZ/texts src/TecnoballZ/sounds src/TecnoballZ/lores 
+SUBDIRS = src src/data src/data/textures src/data/hires src/data/musics src/data/texts src/data/sounds src/data/lores 
 
 pkgdatadir = $(mandir)/man6
 dist_pkgdata_DATA = tecnoballz.6
