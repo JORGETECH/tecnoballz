@@ -1,6 +1,8 @@
 .git
+src/tecnoballz
 Makefile
-*.in
+Makefile.in
+config.h
 *.m4
 *.cache
 *.guess
