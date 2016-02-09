@@ -796,6 +796,10 @@ handler_resources::load_sinus ()
 #endif
 }
 
+#ifdef TECNOBALLZ_DINGUX
+std::string score_dirname;
+#endif
+
 /**
  * load scores table
  */
@@ -803,6 +807,15 @@ char *
 handler_resources::load_high_score_file ()
 {
   char* filedata = NULL;
+
+#ifdef TECNOBALLZ_DINGUX
+  /* Small hack to store hiscore file to ~/.tecnoballz/tecnoballz.hi */
+  /* Dir should be already created */
+  score_dirname = (getenv ("HOME") ? getenv ("HOME") : ".");
+  score_dirname += "/.tecnoballz/tecnoballz.hi";
+  fnamescore = score_dirname.c_str ();
+#endif
+
   try
     {
       filedata = load_file (fnamescore, &last_filesize_loaded);
