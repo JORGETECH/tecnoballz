@@ -40,13 +40,6 @@ AC_CHECK_LIB(mikmod, Player_Stop, [
 AC_SUBST(MIKMOD_FLAGS)
 AC_SUBST(MIKMOD_LIBS)
 
-AC_CHECK_LIB([tinyxml], [main], [
-  TINYXML_LIBS="-ltinyxml"
-],[
-  AC_MSG_ERROR([tinyxml library is not present in your system])
-])
-AC_SUBST(TINYXML_LIBS)
-
 # Checks for header files.
 AC_CHECK_HEADERS([fcntl.h stddef.h stdlib.h string.h sys/time.h unistd.h])
 

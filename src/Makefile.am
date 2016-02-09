@@ -12,7 +12,7 @@ tecnoballz_CXXFLAGS = -DDATADIR=\"$(datadir)/tecnoballz\" \
                       -DSCOREFILE=\"$(scoredir)/$(score)\" \
                       @SDL_CFLAGS@ @MIKMOD_FLAGS@
 #tecnoballz_LDADD = @SDL_LIBS@ @MM_LIBS@ @MIKMOD_LIBS@
-tecnoballz_LDADD = @SDL_LIBS@ @MIKMOD_LIBS@ @TINYXML_LIBS@
+tecnoballz_LDADD = @SDL_LIBS@ @MIKMOD_LIBS@
 
 install-data-hook:
 	-chown root:games "$(DESTDIR)/$(gamesdir)/tecnoballz"
@@ -23,6 +23,10 @@ install-data-hook:
 	-chmod 664 "$(DESTDIR)/$(scoredir)/$(score)"
 
 SOURCES_MAIN = \
+  tinystr.cpp \
+  tinyxml.cpp \
+  tinyxmlerror.cpp \
+  tinyxmlparser.cpp \
   bitmap_data.cc \
   configfile.cc \
   controller_balls.cc \
