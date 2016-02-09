@@ -36,6 +36,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifdef TECNOBALLZ_DINGUX
+static const int DEFAULT_RESOLUTION = 1;
+#else
+static const int DEFAULT_RESOLUTION = 2;
+#endif
+
 const char *
 configfile::language_to_string[MAX_OF_LANGUAGES] =
 {
@@ -88,7 +94,7 @@ configfile::resetvalue ()
 #ifndef SOUNDISOFF
   handler_audio::is_audio_enable = 1;
 #endif
-  resolution = 2;
+  resolution = DEFAULT_RESOLUTION;
   has_background = false;
   is_verbose = false;
   handler_display::optionfull = false;
@@ -255,12 +261,12 @@ configfile::load ()
   Sint32 res = 0;
   if (!parser->read_int ("resolution", &res))
     {
-      res = 2;
+      res = DEFAULT_RESOLUTION;
     }
   resolution = res;
   if (resolution < 1 || resolution > 2)
     {
-      resolution = 2;
+      resolution = DEFAULT_RESOLUTION;
     }
   if (resolution == 2)
     {
