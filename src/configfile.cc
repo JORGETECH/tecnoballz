@@ -51,7 +51,7 @@ configfile::language_to_string[MAX_OF_LANGUAGES] =
 
 const
 std::string
-configfile::CONF_DIR_NAME ("tlk-games");
+configfile::CONF_DIR_NAME (".tecnoballz");
 const
 std::string
 configfile::CONF_FILENAME ("tecnoballz.conf");
@@ -181,7 +181,7 @@ configfile::get_fullpathname ()
   else
     {
       conf_dirname = (getenv ("HOME") ? getenv ("HOME") : ".");
-      conf_dirname += "/.config/" + CONF_DIR_NAME;
+      conf_dirname += "/" + CONF_DIR_NAME;
     }
   conf_filename += conf_dirname + "/" + CONF_FILENAME;
 }
