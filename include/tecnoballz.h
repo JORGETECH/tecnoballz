@@ -80,6 +80,14 @@
 #define TECNOBALLZ_HANDHELD_CONSOLE
 #endif
 
+/** OpenDingux port (GCW Zero) */
+/* define TECNOBALLZ_DINGUX */
+#ifdef TECNOBALLZ_DINGUX
+#undef TECNOBALLZ_PSP
+#undef TECNOBALLZ_GP2X
+#undef TECNOBALLZ_HANDHELD_CONSOLE
+#endif
+
 class tecnoballz;
 class configfile;
 class handler_high_score;
