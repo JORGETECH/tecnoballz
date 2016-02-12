@@ -8,6 +8,9 @@ AC_ARG_ENABLE(devel,
 [  --enable-devel          Development version (default disabled)],
 enable_devel=yes, enable_devel=no)
 
+AC_ARG_ENABLE(dingux,
+[  --enable-dingux         Build for OpenDingux (default disabled)],
+enable_dingux=yes, enable_dingux=no)
 
 # Checks for programs.
 AC_PROG_CXX
@@ -61,6 +64,10 @@ else
   CXXFLAGS="-O2 -Werror -Wall -pedantic -Wextra -std=gnu++98"
 fi
 
+if test "x${enable_dingux}" = "xyes"; then
+  CXXFLAGS="$CXXFLAGS -DTECNOBALLZ_DINGUX"
+fi
+
 AC_OUTPUT(
   Makefile
   src/Makefile
@@ -76,6 +83,7 @@ echo "
 
 TecnoballZ ready for building!
 
+  enable_dingux     : $enable_dingux
   enable_devel      : $enable_devel
 
 Type 'make' to build.
