@@ -36,7 +36,7 @@ AC_CHECK_LIB(SDL_mixer, Mix_GetChunk, [
 ])
 AC_CHECK_LIB(mikmod, Player_Stop, [
   MIKMOD_LIBS="-lmikmod"
-  MIKMOD_FLAGS="-pthread -D_REENTRANT"
+  MIKMOD_FLAGS="-D_REENTRANT"
 ],[
   AC_MSG_ERROR(Could not find the Mikmod library : -lmikmod)
 ])
