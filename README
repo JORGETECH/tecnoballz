@@ -27,6 +27,22 @@ COMPILING AND INSTALLING
         make
         su -c 'make install'
 
+  When cross-compiling for GCW Zero :
+
+       export PATH=/opt/gcw0-toolchain/usr/bin:$PATH
+       ./bootstrap
+       ./configure --host=mips-linux --enable-dingux
+       make
+       ./make_opk.sh
+
+  When compiling with MinGW :
+
+       ./bootstrap
+       # Overpass SDL configure errors
+       ./configure --prefix=/mingw CFLAGS="`sdl-config --cflags`"
+       # Place tecnoballz.hi in current dir
+       make scoredir=.
+
 LEGAL
 
   TecnoballZ is copyright TLK Games 1991-2014 and available under the
