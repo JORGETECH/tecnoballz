@@ -508,6 +508,7 @@ handler_keyboard::toggle_popup_menu ()
       SDL_WM_GrabInput (SDL_GRAB_ON);
     }
 
+#ifndef TECNOBALLZ_DINGUX
   if (!command_keys[TOGGLE_POPUP_MENU])
     {
       SDL_ShowCursor (SDL_DISABLE);
@@ -516,6 +517,7 @@ handler_keyboard::toggle_popup_menu ()
     {
       SDL_ShowCursor (SDL_ENABLE);
     }
+#endif
 }
 
 /**
