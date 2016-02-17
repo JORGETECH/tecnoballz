@@ -455,9 +455,7 @@ sprite_display_menu::check_events ()
               set_current_menu_section(OPTIONS_SECTION);
               break;
             case LINE_ABOUT:
-#ifndef WIN32
               audio->play_music (handler_audio::FRIDGE_IN_SPACE_MUSIC);
-#endif
               clear_text_offscreen ();
               clear_zone_stop ();
               set_current_menu_section(ABOUT_SECTION);
