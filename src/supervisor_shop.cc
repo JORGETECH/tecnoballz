@@ -227,7 +227,7 @@ supervisor_shop::first_init ()
     0,
     0,
     5,
-    3,
+    4,
     options_frame_xmin,
     0
   );

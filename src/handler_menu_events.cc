@@ -112,6 +112,16 @@ handler_menu_events::start (Sint32 spacing, Sint32 min, Sint32 max,
                 " line_max: " << max << " x_center: " << xcenter <<
                 " top_y_coord: " << ytop << std::endl;
     }
+
+  /* HACK: Try to guess if it's a shop and enable hack */
+  if ((Uint32)row_spacing == 48 * resolution && (Uint32)spacing == 44 * resolution &&
+      row_min == 0 && min == 0 &&
+      row_max == 5 && max == 4 &&
+      xcenter == 0 && ytop == 0)
+    shop_hack = 1;
+  else
+    shop_hack = 0;
+
   is_enabled = true;
   y_coord_left_down = handler_keyboard::NULL_YCOORD;
   y_coord_right_down = handler_keyboard::NULL_YCOORD;
@@ -284,6 +294,15 @@ bool handler_menu_events::check ()
           is_warp = true;
           break;
         }
+
+      /* Use shop hack and correct cursor */
+      if (shop_hack)
+          if (current_line == line_max && current_row != row_min)
+            {
+              is_warp = true;
+              current_row = row_min;
+            }
+
       if (is_warp)
         {
           SDL_WarpMouse (left_x_coord + current_row * row_spacing,
