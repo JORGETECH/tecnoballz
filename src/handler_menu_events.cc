@@ -287,7 +287,7 @@ bool handler_menu_events::check ()
       if (is_warp)
         {
           SDL_WarpMouse (left_x_coord + current_row * row_spacing,
-                         top_y_coord + current_line * line_spacing);
+                         top_y_coord + (current_line - line_min) * line_spacing);
         }
     }
   return is_selected;
@@ -344,7 +344,7 @@ bool handler_menu_events::check (Sint32 * pos_y, Sint32 * inc)
         {
           current_line--;
         }
-      SDL_WarpMouse (x_center, top_y_coord + current_line * line_spacing);
+      SDL_WarpMouse (x_center, top_y_coord + (current_line - line_min) * line_spacing);
       break;
     case handler_keyboard::K_DOWN:
       if (current_line == line_max)
@@ -355,7 +355,7 @@ bool handler_menu_events::check (Sint32 * pos_y, Sint32 * inc)
         {
           current_line++;
         }
-      SDL_WarpMouse (x_center, top_y_coord + current_line * line_spacing);
+      SDL_WarpMouse (x_center, top_y_coord + (current_line - line_min) * line_spacing);
       break;
     }
 

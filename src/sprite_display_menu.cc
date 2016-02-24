@@ -45,7 +45,7 @@ sprite_display_menu::sprite_display_menu ()
   font_height = 8 * resolution;
   if (resolution == 2)
     {
-      line_spacing = 17;
+      line_spacing = 16;
     }
   else
     {
@@ -379,7 +379,6 @@ void
 sprite_display_menu::set_current_menu_section(Uint32 current)
 {
   current_menu_section = current;
-  Sint32 y = y_coord;
   Uint32 min = 0;
   Uint32 max = NUM_OF_ROWS;
   for(Sint32 i = 0; i < NUM_OF_ROWS; i++)
@@ -421,7 +420,8 @@ sprite_display_menu::set_current_menu_section(Uint32 current)
         }
       max--;
     }
-  menu_events->start(line_spacing, min, max - 1, display->get_width() >> 1, y);
+  menu_events->start(line_spacing, min, max - 1, display->get_width() >> 1,
+                     get_y_coord() + min * char_height);
 }
 
 /**

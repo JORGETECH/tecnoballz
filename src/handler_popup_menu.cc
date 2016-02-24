@@ -162,7 +162,7 @@ handler_popup_menu::first_init (bitmap_data * bmp)
   /* determine line height into menu box */
   if (resolution == 2)
     {
-      vertical_space = 17;
+      vertical_space = 16;
     }
   else
     {
