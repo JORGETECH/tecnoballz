@@ -27,11 +27,12 @@ COMPILING AND INSTALLING
         make
         su -c 'make install'
 
-  When cross-compiling for GCW Zero :
+  When cross-compiling for RetroFW :
 
-       export PATH=/opt/gcw0-toolchain/usr/bin:$PATH
+       export PATH=/opt/rs97tools/usr/bin:$PATH
        ./bootstrap
-       ./configure --host=mips-linux --enable-dingux
+       AS=/opt/rs97tools/bin/mipsel-linux-as CC=/opt/rs97tools/bin/mipsel-linux-gcc CXX=/opt/rs97tools/bin/mipsel-linux-g++ LD=/opt/rs97tools/bin/mipsel-linux-ld ./configure --prefix=/mnt --host=x86_64-pc-linux-gnu --target=linux-mips --enable-dingux CFLAGS="-I/opt/rs97tools/mipsel-RetroFW-linux-uclibc/sysroot/usr/include/" LDFLAGS="-L/opt/rs97tools/mipsel-RetroFW-linux-uclibc/sysroot/usr/lib/"
+       (Read FIXME for knowing about necessary Makefile adaptations)
        make
        ./make_opk.sh
 
