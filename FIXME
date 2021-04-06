@@ -1,0 +1,5 @@
+The Makefile inside the "src/" directory needs some changes to successfully compile with a newer toolchain (after running configure).
+
+- @SDL_CFLAGS@ in the "tecnoballz_CXXFLAGS" line needs to be replaced with: -I/opt/rs97apps/mipsel-RetroFW-linux-uclibc/sysroot/usr/include/SDL/
+- @SDL_LIBS@ in the "tecnoballz_LDADD" line needs to be replaced with: -lSDL -lSDL_image -lSDL_mixer
+- The "CXXFLAGS" line needs an option to be added so it compiles on modern GCC: -Wno-error=implicit-fallthrough
