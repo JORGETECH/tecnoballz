@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OPK_NAME=tecnoballz.opk
+OPK_NAME=tecnoballz-retrofw.opk
 
 echo ${OPK_NAME}
 
@@ -9,8 +9,8 @@ mkdir tmp -p
 cp src/data tmp -r
 find tmp -type f -name 'Makefile*' -exec rm -f {} \;
 
-# create default.gcw0.desktop
-cat > default.gcw0.desktop <<EOF
+# create default.retrofw.desktop
+cat > default.retrofw.desktop <<EOF
 [Desktop Entry]
 Name=Tecnoballz
 Comment=Breakout
@@ -24,7 +24,7 @@ EOF
 
 # create opk
 FLIST="tmp/data"
-FLIST="${FLIST} default.gcw0.desktop"
+FLIST="${FLIST} default.retrofw.desktop"
 FLIST="${FLIST} src/data/tecnoballz.png"
 FLIST="${FLIST} src/tecnoballz"
 FLIST="${FLIST} COPYING"
@@ -33,6 +33,6 @@ FLIST="${FLIST} README"
 rm -f ${OPK_NAME}
 mksquashfs ${FLIST} ${OPK_NAME} -all-root -no-xattrs -noappend -no-exports
 
-cat default.gcw0.desktop
-rm -f default.gcw0.desktop
+cat default.retrofw.desktop
+rm -f default.retrofw.desktop
 rm -r tmp
